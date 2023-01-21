@@ -7,13 +7,13 @@ const gallery = document.querySelector('.gallery');
 
 const imgElemenst = galleryItems.map(image => `
 <a class="gallery__item" href="${image.original}">
-	<img class="gallery__image" src="${image.preview}" alt="${image.description}" />
+	<img class="gallery__image" src="${image.preview}" alt="${image.description}" title="${image.description}" />
 </a>`).join("");
 gallery.insertAdjacentHTML("beforeend", imgElemenst);
 
-gallery.addEventListener('click', onImageClick);
+// gallery.addEventListener('click', onImageClick);
 
-function onImageClick(evt) {
-	evt.preventDefault();
-	const lightbox = new SimpleLightbox('.gallery a', { /* 200ms */ });
-}
+// function onImageClick(evt) {
+// 	evt.preventDefault();
+// }
+const lightbox = new SimpleLightbox('.gallery a', {'captionDelay': 250});
