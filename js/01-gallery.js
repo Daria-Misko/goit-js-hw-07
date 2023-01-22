@@ -25,8 +25,6 @@ gallery.addEventListener('click', onImageClick);
 
 function onImageClick(evt) {
 	evt.preventDefault();
-	console.log(evt.target.nodeName);
-	console.log(evt.target.src);
 	if (evt.target.nodeName !== "IMG") {
 		return
 	}
@@ -34,6 +32,7 @@ function onImageClick(evt) {
    <img src="${evt.target.dataset.source}" width="800" height="600">
 `)
 	instance.show()
+	
 	gallery.addEventListener('keydown', onEscClick);
 function onEscClick(evt) {
 	if (evt.key !== "Escape") {
